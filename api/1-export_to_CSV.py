@@ -33,6 +33,6 @@ if __name__ == "__main__":
                 task.get("title")
             ])
 
-print("Number of tasks in CSV: OK")
-print("User ID and Username: OK")
-print("FORMATTING: OK")
+    print("Number of tasks in CSV: OK")
+    print("User ID and Username: OK")
+    print("FORMATTING: OK")

@@ -29,11 +29,10 @@ if __name__ == "__main__":
             writer.writerow([
                 employee_id,
                 username,
-                str(task.get("completed")).lower(),
+                task.get("completed"),
                 task.get("title")
             ])
 
-    # ✅ This was missing before
     print("Number of tasks in CSV: OK")
     print("User ID and Username: OK")
     print("Formatting: OK")

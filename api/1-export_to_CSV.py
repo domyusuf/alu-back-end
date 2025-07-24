@@ -28,8 +28,8 @@ if __name__ == "__main__":
 
         for task in todos:
             writer.writerow([
-                employee_id,
+                str(employee_id),
                 username,
-                task.get("completed"),
+                str(task.get("completed")),
                 task.get("title")
             ])

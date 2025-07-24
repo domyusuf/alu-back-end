@@ -36,4 +36,3 @@ if __name__ == "__main__":
     print("Number of tasks in CSV: OK")
     print("User ID and Username: OK")
     print("FORMATTING: OK")
-    

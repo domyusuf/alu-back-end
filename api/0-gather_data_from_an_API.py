@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Script to fetch employee TODO progress from JSONPlaceholder API"""
+"""Script to fetch employee TODO progress from JSONPlaceholder API."""
 
 import requests
 import sys

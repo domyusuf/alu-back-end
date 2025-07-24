@@ -24,7 +24,7 @@ if __name__ == "__main__":
         writer = csv.writer(csvfile, quoting=csv.QUOTE_ALL)
         for task in todos_response:
             writer.writerow([
-                employee_id,  # ✅ Remain string, not int
+                employee_id,
                 username,
                 task.get("completed"),
                 task.get("title")

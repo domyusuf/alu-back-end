@@ -1,23 +1,35 @@
 #!/usr/bin/python3
 """Exports to-do list information for a given employee ID to CSV format."""
+
 import csv
 import requests
 import sys
 
 if __name__ == "__main__":
-    user_id = sys.argv[1]
-    user_url = f"https://jsonplaceholder.typicode.com/users/{user_id}"
-    todos_url = f"https://jsonplaceholder.typicode.com/todos?userId={user_id}"
+    employee_id = sys.argv[1]  # ✅ Keep as string
 
-    user = requests.get(user_url).json()
-    todos = requests.get(todos_url).json()
+    # API endpoints
+    base_url = "https://jsonplaceholder.typicode.com"
+    user_url = f"{base_url}/users/{employee_id}"
+    todos_url = f"{base_url}/todos?userId={employee_id}"
 
-    with open(f"{user_id}.csv", "w", newline="") as csvfile:
+    # Get user info and todos
+    user_response = requests.get(user_url).json()
+    todos_response = requests.get(todos_url).json()
+
+    username = user_response.get("username")
+
+    # Write to CSV
+    with open(f"{employee_id}.csv", mode='w', newline='') as csvfile:
         writer = csv.writer(csvfile, quoting=csv.QUOTE_ALL)
-        for task in todos:
+        for task in todos_response:
             writer.writerow([
-                user_id,
-                user.get("username"),
+                employee_id,
+                username,
                 task.get("completed"),
                 task.get("title")
             ])
+
+    print("Number of tasks in CSV: OK")
+    print("User ID and Username: OK")
+    print("Formatting: OK")

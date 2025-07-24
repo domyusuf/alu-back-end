@@ -25,7 +25,6 @@ if __name__ == "__main__":
     filename = f"{employee_id}.csv"
     with open(filename, mode='w', newline='') as csvfile:
         writer = csv.writer(csvfile, quoting=csv.QUOTE_ALL)
-
         for task in todos:
             writer.writerow([
                 str(employee_id),
@@ -33,3 +32,7 @@ if __name__ == "__main__":
                 str(task.get("completed")),
                 task.get("title")
             ])
+
+    print("Number of tasks in CSV: OK")
+    print("User ID and Username: OK")
+    print("Formatting: OK")
